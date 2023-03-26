@@ -1,0 +1,128 @@
+html {
+    box-sizing: border-box;
+}
+/* body {
+    background-color: gold;
+} */
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+.header {
+    background: #F8F6F7;
+    overflow: hidden;
+}
+.header .container {
+    position: relative;
+    padding: 30px 0 130px 0;
+}
+.header-top {
+    margin-bottom: 120px;
+    display: flex;
+    width: 100%;
+    align-items: baseline;
+    justify-content: space-between; 
+}
+.navigation ul {
+    display: flex;
+    list-style: none;
+}
+.navigation li:not(:last-child) {
+    margin-right: 10px;
+}
+
+
+.container {
+    max-width: 1110px;
+    margin: auto;
+}
+
+a.logo {
+    font-size: 24px;
+    color: #333;
+    font-weight: bold;
+    text-decoration: none;
+}
+.phone-info {
+    text-align: right;
+}
+.girl {
+    position: absolute;
+    bottom: 0;
+    right: 60px;
+    z-index: 0;
+}
+.girl::before {
+    content: "";
+    width: 472px;
+    height: 472px;
+    border-radius: 50%;
+    background-color: #FB9475;
+    position: absolute;
+    bottom: -110px;
+    right: 0;
+}
+
+.girl img {
+    display: block;
+    position: relative;
+}
+.header-hero,
+.header-top {
+    z-index: 1;
+    position: relative;
+}
+.about-hero {
+    max-width: 569.54px;
+}
+.creame {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+.about .container {
+    position: relative;
+}
+.advantages .container {
+    display: flex;
+}
+.advantages {
+    text-align: center;
+}
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+}
+.cards div {
+    max-width: 350px;
+}
+.prices ul {
+    display: flex;
+    list-style: none;
+}
+.prices li {
+    margin-right: 10px;
+}
+.prices .checklist {
+    max-width: 1015px;
+}
+.masters .list {
+    display: flex;
+    /* flex-wrap: wrap; */
+}
+.works .list {
+    display: flex;
+    flex-wrap: nowrap;
+}
+.flashback {
+    border: 2px solid black;;
+    border-radius: 8px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    
+}
+.contacts .container {
+    position: relative;
+}
