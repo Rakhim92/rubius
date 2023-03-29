@@ -1,5 +1,11 @@
 html {
     box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    color: #333333;
+}
+a {
+    text-decoration: none;
+    color: #333333;
 }
 /* body {
     background-color: gold;
@@ -17,6 +23,16 @@ html {
     position: relative;
     padding: 30px 0 130px 0;
 }
+.header button {
+    background: #FB9475;
+    border-radius: 24px;
+    align-items: center;
+    padding: 17px 30px;
+    width: 203px;
+    height: 48px;
+    cursor: pointer;
+    border: none;
+}
 .header-top {
     margin-bottom: 120px;
     display: flex;
@@ -27,9 +43,14 @@ html {
 .navigation ul {
     display: flex;
     list-style: none;
+    font-weight: 500;
+    line-height: 17px;
 }
 .navigation li:not(:last-child) {
     margin-right: 10px;
+}
+.about {
+    margin-top: 94px;
 }
 
 
@@ -89,13 +110,23 @@ a.logo {
 }
 .advantages {
     text-align: center;
+    margin-top: 104.49px;
 }
 .cards {
     display: flex;
     flex-wrap: wrap;
+    /* align-items: flex-start; */
 }
 .cards div {
+    /* max-height: 180px; */
     max-width: 350px;
+    /* margin-right: 30px; */
+}
+.prices h1 {
+    font-size: 48px;
+}
+.prices {
+    margin-top: 100px;
 }
 .prices ul {
     display: flex;
@@ -104,9 +135,23 @@ a.logo {
 .prices li {
     margin-right: 10px;
 }
-.prices .checklist {
-    max-width: 1015px;
+.prices .list {
+    margin-bottom: 57px;
 }
+.prices .checklist li {
+    max-height: 51px;
+    width: 444.12px;
+    position: relative;
+   
+}
+.prices .checklist {
+    display: flex;
+    flex-wrap: wrap;
+}
+/* .prices .checklist {
+    flex-wrap: wrap;
+    max-width: 1015px;
+} */
 .masters .list {
     display: flex;
     /* flex-wrap: wrap; */
@@ -116,13 +161,156 @@ a.logo {
     flex-wrap: nowrap;
 }
 .flashback {
-    border: 2px solid black;;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
     border-radius: 8px;
     position: absolute;
     right: 0;
-    bottom: 0;
+    top: 0;
     
+}
+.contacts {
+    height: 445px;
 }
 .contacts .container {
     position: relative;
+}
+
+footer .container {
+    position: relative;
+}
+footer .list {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    list-style: none;
+    cursor: pointer;
+}
+footer .list li:not(:last-child){
+    margin-right: 28px;
+    text-decoration: none;
+}
+.service {
+    margin-top: 102px;
+}
+.service button {
+    background: #FB9475;
+    border-radius: 17px;
+    align-items: center;
+    padding: 10px 20px;
+    width: 112px;
+    height: 34px;
+    cursor: pointer;
+    border: none;
+}
+.service h1 {
+    font-size: 48px;
+}
+.service h3 {
+    margin-top: 20px;
+    margin-bottom: 0px;
+}
+.service p {
+    margin-top: 8px;
+} 
+.about h1 {
+    font-size: 48px;
+}
+.header h1 {
+    font-size: 48px;
+    max-width: 540px;
+}
+.prices .list li:not(:last-child) {
+    margin-right: 28px;
+}
+.prices ul {
+    padding-left: 0;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+}
+.prices .checklist li {
+    margin-bottom: 36px;
+    margin-right: 50px;
+}
+.hair {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+}
+.cost {
+    font-style: normal;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    position: absolute;
+    right: 0;
+}
+.masters {
+    margin-top: 100px;
+}
+.masters h1 {
+    font-size: 48px; 
+}
+.masters .list div {
+    margin-right: 30px;
+}
+.name {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+}
+.works {
+    margin-top: 100px;
+}
+.works h1 {
+    font-size: 48px;
+}
+.works img {
+    margin-right: 29px;
+}
+.brands {
+    margin-top: 150px;
+    opacity: 0.5;
+}
+.brands h3 {
+    text-align: center;
+}
+.logos {
+    display: flex;
+    justify-content: space-around;
+}
+.contacts {
+ margin-top: 100px;
+}
+.flashback {
+    width: 445px;
+    height: 406px;
+}
+.wrapper {
+    padding-right: 35px;
+   padding-left: 35px;
+   padding-top: 40px;
+   padding-bottom: 40px;
+}
+.wrapper input {
+    width: 375px;
+    height: 44px;
+}
+.wrapper button {
+    width: 375px;
+    height: 48px;
+    background: #FB9475;
+    border-radius: 24px;
+    text-align: center;
+    color: #FFFFFF;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 14px;
+    cursor: pointer;
+    border: none;
 }
