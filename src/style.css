@@ -7,9 +7,6 @@ a {
     text-decoration: none;
     color: #333333;
 }
-/* body {
-    background-color: gold;
-} */
 
 *, *::before, *::after {
     box-sizing: inherit;
@@ -23,7 +20,7 @@ a {
     position: relative;
     padding: 30px 0 130px 0;
 }
-.header button {
+.btn {
     background: #FB9475;
     border-radius: 24px;
     align-items: center;
@@ -33,7 +30,7 @@ a {
     cursor: pointer;
     border: none;
 }
-.header-top {
+.header__top {
     margin-bottom: 120px;
     display: flex;
     width: 100%;
@@ -68,13 +65,13 @@ a.logo {
 .phone-info {
     text-align: right;
 }
-.girl {
+.header__girl {
     position: absolute;
     bottom: 0;
     right: 60px;
     z-index: 0;
 }
-.girl::before {
+.header__girl::before {
     content: "";
     width: 472px;
     height: 472px;
@@ -85,19 +82,19 @@ a.logo {
     right: 0;
 }
 
-.girl img {
+.header__girl img {
     display: block;
     position: relative;
 }
-.header-hero,
-.header-top {
+header__hero,
+.header__top {
     z-index: 1;
     position: relative;
 }
-.about-hero {
+.about__hero {
     max-width: 569.54px;
 }
-.creame {
+.about__creame {
     position: absolute;
     bottom: 0;
     right: 0;
@@ -112,15 +109,13 @@ a.logo {
     text-align: center;
     margin-top: 104.49px;
 }
-.cards {
+.service__inner {
     display: flex;
     flex-wrap: wrap;
     /* align-items: flex-start; */
 }
-.cards div {
-    /* max-height: 180px; */
+.service__inner div {
     max-width: 350px;
-    /* margin-right: 30px; */
 }
 .prices h1 {
     font-size: 48px;
@@ -179,7 +174,7 @@ a.logo {
 footer .container {
     position: relative;
 }
-footer .list {
+.footer__navigation {
     position: absolute;
     right: 0;
     bottom: 0;
@@ -187,10 +182,7 @@ footer .list {
     list-style: none;
     cursor: pointer;
 }
-footer .list li:not(:last-child){
-    margin-right: 28px;
-    text-decoration: none;
-}
+
 .service {
     margin-top: 102px;
 }
@@ -313,4 +305,20 @@ footer .list li:not(:last-child){
     line-height: 14px;
     cursor: pointer;
     border: none;
+}
+.social {
+    list-style: none;
+    display: flex;
+}
+.social__item:not(:last-child) {
+    margin-right: 20px;  
+}
+.social--vertical {
+    display: block; 
+    position: absolute;
+    right: 0;
+    bottom: 200px;
+}
+.social--vertical .social__item:not(:last-child) {
+    margin-bottom: 20px;
 }
