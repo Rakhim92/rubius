@@ -1,0 +1,336 @@
+html {
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    color: #333333;
+    background-color: #FFFFFF;
+}
+a {
+    text-decoration: none;
+    color: #333333;
+}
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+.container {
+    max-width: 1110px;
+    margin: auto;
+}
+.navigation ul {
+    display: flex;
+    list-style: none;
+    font-weight: 500;
+    line-height: 17px;
+    & li:not(:last-child) {
+        margin-right: 10px;
+    }
+}
+.btn {
+    background: #FB9475;
+    border-radius: 24px;
+    align-items: center;
+    padding: 17px 30px;
+    width: 203px;
+    height: 48px;
+    cursor: pointer;
+    color: #FFFFFF;
+    border: none;
+}
+.phone-info {
+    text-align: right;
+    &__tel {
+        display: block;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 14px;
+    }
+}
+.header {
+    background-image: url(../images/15357251\ 1.png);
+    overflow: hidden;
+    & .container {
+        position: relative;
+        padding: 30px 0 130px 0;
+    }
+    &__top {
+        margin-bottom: 120px;
+        display: flex;
+        width: 100%;
+        align-items: baseline;
+        justify-content: space-between; 
+    }
+    &__logo {
+        font-size: 24px;
+        color: #333;
+        font-weight: bold;
+        text-decoration: none;
+    }
+    &__girl {
+        position: absolute;
+        bottom: 0;
+        right: 60px;
+        z-index: 0;
+        &::before {
+            content: "";
+            width: 472px;
+            height: 472px;
+            border-radius: 50%;
+            background-color: #FB9475;
+            position: absolute;
+            bottom: -110px;
+            right: 0;
+        }
+        & img {
+            display: block;
+            position: relative;
+        }
+    }
+    & h1 {
+        font-size: 48px;
+        max-width: 540px;
+    }
+}
+.about {
+    margin-top: 94px;
+    & .container {
+        position: relative;
+    }
+    &__title {
+        font-size: 48px;
+    }
+    &__hero {
+        max-width: 569.54px;
+    }
+    &__description {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 26px;
+    }
+    &__label {
+        position: absolute;
+        bottom: 25%;
+        right: 15%;
+    }
+    &__creame {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
+}
+.advantages {
+    text-align: center;
+    margin-top: 104.49px;
+    & .container {
+        display: flex;
+    }
+}
+.service {
+    margin-top: 102px;
+    &__card {
+        max-height: 300px;
+        max-width: 350px;
+        margin-bottom: 88px;
+        &:not(:nth-child(3)) {
+            margin-right: 30px;
+        }
+    }
+    &__inner {
+        display: flex;
+        flex-wrap: wrap;
+        list-style: none;
+        padding: 0;
+    }
+    & button {
+        background: #FB9475;
+        border-radius: 17px;
+        align-items: center;
+        padding: 10px 20px;
+        width: 112px;
+        height: 34px;
+        cursor: pointer;
+        border: none;
+    }
+    &__title {
+        font-size: 48px;
+    }
+    & p {
+        margin: 0;
+    } 
+    &__name {
+        margin: 0;
+    }
+}
+.prices {
+    margin-top: 100px;
+    &__title {
+        font-size: 48px;
+    }
+    & ul {
+        display: flex;
+        list-style: none;
+        padding-left: 0;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 17px;
+    }
+    & li {
+        margin-right: 10px;
+    }
+    &__list {
+        margin-bottom: 57px;
+    }
+    &__checklist {
+        display: flex;
+        flex-wrap: wrap;
+        & li {
+            margin-bottom: 36px;
+            margin-right: 50px;
+            max-height: 51px;
+            width: 444.12px;
+            position: relative;
+            &:not(:last-child) {
+                margin-right: 28px;
+            }
+        }
+    }
+    &__hair {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 22px;
+    }
+    &__cost {
+        font-style: normal;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 17px;
+        position: absolute;
+        right: 0;
+    }
+
+    
+}
+.masters {
+    margin-top: 100px;
+    background-color: #F8F6F7;
+    &__title {
+        font-size: 48px; 
+    }
+    & .masters__list div {
+        margin-right: 30px;
+    }
+    & .masters__list {
+        display: flex; 
+    }
+    &__name {
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 22px;
+    }
+}
+.works {
+    margin-top: 100px;
+    &__title {
+        font-size: 48px;
+    }
+    & img {
+        margin-right: 29px;
+    }
+    &__list {
+        display: flex;
+        flex-wrap: nowrap;
+    }
+}
+.brands {
+    margin-top: 150px;
+    opacity: 0.5;
+    & h3 {
+        text-align: center;
+    }
+    &__images {
+        display: flex;
+        justify-content: space-around;
+    }
+}
+.contacts {
+    height: 445px;
+    margin-top: 100px;
+    & .container {
+        position: relative;
+    }
+}
+.menu {
+    background: #FFFFFF;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    width: 445px;
+    height: 406px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    &__wrapper {
+        padding-right: 35px;
+       padding-left: 35px;
+       padding-top: 40px;
+       padding-bottom: 40px;
+        & input {
+            width: 375px;
+            height: 44px;
+        }
+        & button {
+            width: 375px;
+            height: 48px;
+            background: #FB9475;
+            border-radius: 24px;
+            text-align: center;
+            color: #FFFFFF;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 14px;
+            cursor: pointer;
+            border: none;
+        }
+    }
+}
+
+
+footer .container {
+    position: relative;
+}
+.footer__navigation {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    list-style: none;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+.social {
+    list-style: none;
+    display: flex;
+    &__item:not(:last-child) {
+        margin-right: 20px;  
+    }
+    &--vertical {
+        display: block; 
+        position: absolute;
+        right: 0;
+        bottom: 200px;
+        & .social__item:not(:last-child) {
+            margin-bottom: 20px;
+        }
+    }
+}
+
+
+

@@ -1,44 +1,22 @@
-const { src, dest, series, parallel, watch } = require('gulp');
+const { src, dest, series, watch } = require('gulp');
 const sass = require('gulp-sass')(require('sass'));
-const clean = require('gulp-clean');
-const browserSync = require('browser-sync').create();
-const postcss = require('gulp-postcss');
-const autoprefixer = require('autoprefixer');
-const cssnano = require('cssnano');
-const sourcemaps = require('gulp-sourcemaps');
 
 // Таск компиляции SASS в CSS
 function buildSass() {
     return src('src/scss/**/*.scss')
-        .pipe(sourcemaps.init())
-        .pipe(sass({ 
-            includePaths: ['./node_modules'] 
-        }).on('error', sass.logError))
-        .pipe(
-            postcss([
-                autoprefixer({
-                    grid: true,
-                    overrideBrowserslist: ['last 2 versions']
-                }),
-                cssnano()
-            ])
-        )
-        .pipe(sourcemaps.write())
+        .pipe(sass({ includePaths: ['./node_modules'] }).on('error', sass.logError))
         .pipe(dest('src/css'))
-        .pipe(dest('dist/css'))
-        .pipe(browserSync.stream());
+        .pipe(dest('dist/css'));
 }
 
 // Таск работы с html файлами
 function buildHtml() {
-    return src('src/**/*.html')
-        .pipe(dest('dist'))
-        .pipe(browserSync.stream());
+    return src('src/**/*.html').pipe(dest('dist'));
 }
 
 // Таск копирования статичных файлов
 function copy() {
-    return src(['src/images']).pipe(dest('dist'));
+    return src(['src/images/**/*.*']).pipe(dest('dist/images'));
 }
 
 // Таск очистки dist
@@ -52,13 +30,9 @@ function serve() {
     watch('src/**/*.html', buildHtml);
 }
 
-// Создание дев-сервера
-function createDevServer() {
-    browserSync.init({
-        server: 'src',
-        notify: false
-    });
-}
-
-exports.build = series(cleanDist, parallel([buildSass, buildHtml, copy]));
-exports.default = series(buildSass, parallel(createDevServer, serve));
+exports.sass = buildSass;
+exports.html = buildHtml;
+exports.copy = copy;
+exports.cleanDist = cleanDist;
+// exports.build = series(cleanDist, cleanDist, buildSass, buildHtml, copy);
+exports.default = series(buildSass, buildHtml, copy, serve);
