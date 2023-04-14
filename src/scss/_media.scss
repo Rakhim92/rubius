@@ -1,0 +1,166 @@
+
+/* Large Devices, Wide Screens */ 
+@media only screen and (max-width: 1280px) { 
+} 
+/* Medium Devices, Desktops */ 
+@media only screen and (max-width: 992px) { 
+    .header {
+        &__navigation {
+            display: none;
+       }
+        &__girl {
+            opacity: 0.4;
+        }
+        &__hero {
+            text-align: center;
+        }
+        &__title {
+            text-align: center;
+        }
+    }
+    .about {
+        &__title {
+            text-align: center;
+        }
+        &__subtitle {
+            text-align: center;
+        }
+        &__description {
+            text-align: center;
+            // display: none;
+        }
+        &__creame {
+            display: none;
+        }
+        &__label {
+            display: none;
+        }
+    }
+    .advantages {
+        display: none;
+    }
+} 
+/* Small Devices, Tablets */ 
+// @media only screen and (max-width: 768px) {
+//     // .header {
+//     //     &__top {
+//     //         flex-direction: column;
+//     //     }
+//     //     &__navigation {
+//     //         display: none;
+//     //         width: 0;
+//     //     }
+//     //     &__phone {
+//     //         display: flex;
+//     //         flex-direction: column;
+//     //         flex-wrap: wrap;
+//     //     }
+//     //     &__title {
+//     //         font-size: 12px;
+//     //         max-width: 300px;
+//     //     }
+//     //     &__logo {
+//     //         margin-left: 50%;
+//     //     }
+//     //     & .phone-info__tel {
+//     //         font-size: 32px;
+//     //     }
+//     // }
+//     // .about {
+//     //     display: none;
+//     // }
+//     // .advantages {
+//     //     & .container {
+//     //         flex-direction: column;
+//     //     }
+//     // }
+//     // .service {
+//     //     &__title {
+//     //         font-size: 24px;
+//     //         text-align: center;
+//     //     }
+//     //     &__inner {
+//     //         // flex-direction: column;
+//     //         justify-content: flex-end;
+//     //     }
+//     // }
+// } 
+/* Extra Small Devices, Phones */ 
+@media only screen and (max-width: 480px) { 
+    // .hero__title {
+    //     font-size: 24px;
+    // }
+    .social  {
+        // background-color: green;
+        display: none;
+    }
+    .social--vertical {
+        visibility: hidden;
+    }
+    .header .header__hero .hero__title {
+        font-size: 24px;
+    }
+    .header .header__hero .hero__subtitle {
+        font-size: 12px;
+    }
+    .header .container {
+        padding-bottom: 60px;
+    }
+    .header__top {
+        padding-bottom: 40px;
+    }
+    .header__girl {
+        display: none;
+    }
+    .about .about__hero .about__title {
+        font-size: 24px;
+    }
+    .about .about__hero .about__subtitle {
+        font-size: 14px;
+    }
+    .about .about__hero .about__description {
+        font-size: 12px;
+    }
+    .service .service__header .service__title {
+        text-align: center;
+        font-size: 24px;
+    }
+    .prices .prices__title {
+        text-align: center;
+        font-size: 24px;
+    }
+    .masters .masters__title {
+        text-align: center;
+        font-size: 24px;
+    }
+    .masters .masters__list {
+        flex-direction: column;
+    }
+    .works {
+        display: none;
+    }
+    .brands {
+        display: none;
+    }
+    .contacts {
+        text-align: center;
+    }
+    .contacts .social {
+        justify-content: center;
+    }
+    .menu {
+        display: none;
+    }
+    .footer__title {
+        display: none;
+    }
+    .footer__subtitle {
+        display: none;
+    }
+    .footer .navigation__list {
+        display: none;
+    }
+} 
+/* Custom, iPhone Retina */ 
+@media only screen and (max-width: 320px) { 
+}

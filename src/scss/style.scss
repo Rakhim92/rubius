@@ -1,3 +1,4 @@
+@import 'media';
 html {
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
@@ -18,15 +19,9 @@ a {
     max-width: 1110px;
     margin: auto;
 }
-.navigation ul {
-    display: flex;
-    list-style: none;
-    font-weight: 500;
-    line-height: 17px;
-    & li:not(:last-child) {
-        margin-right: 10px;
-    }
-}
+// .navigation__item {
+//     white-space: nowrap;
+// }
 .btn {
     background: #FB9475;
     border-radius: 24px;
@@ -37,40 +32,75 @@ a {
     cursor: pointer;
     color: #FFFFFF;
     border: none;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 14px;
 }
-.phone-info {
-    text-align: right;
-    &__tel {
-        display: block;
-        font-weight: 500;
-        font-size: 18px;
-        line-height: 14px;
+.navigation__list {
+    display: flex;
+    flex-wrap: nowrap;
+    list-style: none;
+    gap: 28px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17.07px;
+    & .navigation__item {
+        white-space: nowrap;
     }
 }
 .header {
-    background-image: url(../images/15357251\ 1.png);
+    background-image: url(../images/header-background.png);
     overflow: hidden;
     & .container {
         position: relative;
         padding: 30px 0 130px 0;
     }
     &__top {
-        margin-bottom: 120px;
         display: flex;
-        width: 100%;
         align-items: baseline;
         justify-content: space-between; 
+        width: 100%;
+        margin-bottom: 120px;
+        & .header__logo {
+            font-size: 24px;
+            color: #333;
+            font-weight: bold;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+        & .phone-info {
+            text-align: right;
+            &__tel {
+                display: block;
+                font-weight: 500;
+                font-size: 18px;
+                line-height: 14px;
+            }
+            &__time {
+                font-weight: 400;
+                font-size: 11px;
+                line-height: 14px;
+            }
+        }
+
     }
-    &__logo {
-        font-size: 24px;
-        color: #333;
-        font-weight: bold;
-        text-decoration: none;
+    &__hero {
+        & .hero__title {
+            font-weight: 600;
+            font-size: 48px;
+            line-height: 58.51px;
+            max-width: 548px;
+        }
+        & .hero__subtitle {
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 24.38px;
+        }
     }
     &__girl {
         position: absolute;
-        bottom: 0;
-        right: 60px;
+        bottom:  -20px;
+        right: 120px;
         z-index: 0;
         &::before {
             content: "";
@@ -87,36 +117,39 @@ a {
             position: relative;
         }
     }
-    & h1 {
-        font-size: 48px;
-        max-width: 540px;
-    }
 }
 .about {
     margin-top: 94px;
     & .container {
         position: relative;
     }
-    &__title {
-        font-size: 48px;
-    }
     &__hero {
         max-width: 569.54px;
+        & .about__title {
+            font-weight: 700;
+            font-size: 48px;
+            line-height: 58.51px;
+        }
+        & .about__subtitle {
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 32px;
+        }
+        & .about__description {
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 26px;
+        }
     }
-    &__description {
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 26px;
+    &__creame {
+        position: absolute;
+        bottom: 0px;
+        right: 0;
     }
     &__label {
         position: absolute;
         bottom: 25%;
-        right: 15%;
-    }
-    &__creame {
-        position: absolute;
-        bottom: 0;
-        right: 0;
+        right: 10%;
     }
 }
 .advantages {
@@ -125,66 +158,86 @@ a {
     & .container {
         display: flex;
     }
+    &__title {
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 21.94px;
+    }
+    &__subtitle {
+        text-align: center;
+        flex-wrap: wrap;
+        padding-left: 50px;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 22px;
+    }
 }
 .service {
     margin-top: 102px;
+    &__inner {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        list-style: none;
+        padding: 0;
+    }
+    &__title {
+        font-weight: 700;
+        font-size: 48px;
+        line-height: 59px;
+    }
     &__card {
         max-height: 300px;
         max-width: 350px;
         margin-bottom: 88px;
-        &:not(:nth-child(3)) {
-            margin-right: 30px;
+        & .service__image {
+            margin-bottom: 20px;
         }
-    }
-    &__inner {
-        display: flex;
-        flex-wrap: wrap;
-        list-style: none;
-        padding: 0;
-    }
-    & button {
-        background: #FB9475;
-        border-radius: 17px;
-        align-items: center;
-        padding: 10px 20px;
-        width: 112px;
-        height: 34px;
-        cursor: pointer;
-        border: none;
-    }
-    &__title {
-        font-size: 48px;
-    }
-    & p {
-        margin: 0;
-    } 
-    &__name {
-        margin: 0;
+        & .service__name {
+            margin: 0;
+            margin-bottom: 8px;
+        }
+        & .service__description {
+            margin: 0;
+            margin-bottom: 16px;
+        }
+        & .service--btn {
+            width: 112px;
+            height: 34px;
+            padding: 10px 20px;
+            background: #FB9475;
+            border-radius: 17px;
+        }
     }
 }
 .prices {
     margin-top: 100px;
     &__title {
+        font-weight: 700;
         font-size: 48px;
+        line-height: 59px;
     }
-    & ul {
+    &__list {
         display: flex;
         list-style: none;
         padding-left: 0;
         font-weight: 500;
         font-size: 14px;
         line-height: 17px;
-    }
-    & li {
-        margin-right: 10px;
-    }
-    &__list {
         margin-bottom: 57px;
+        & .prices__type {
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 17px;
+            margin-right: 10px;
+        }
     }
     &__checklist {
         display: flex;
         flex-wrap: wrap;
-        & li {
+        list-style: none;
+        padding-left: 0;
+        & .prices__item {
             margin-bottom: 36px;
             margin-right: 50px;
             max-height: 51px;
@@ -193,25 +246,27 @@ a {
             &:not(:last-child) {
                 margin-right: 28px;
             }
+            & .prices__hair {
+                font-weight: 500;
+                font-size: 18px;
+                line-height: 22px;
+            }
+            & .prices__cost {
+                font-weight: 600;
+                font-size: 20px;
+                line-height: 24px;
+                color: #00BF78;
+                position: absolute;
+                right: 0;
+            }
+            & .prices__description {
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 17px;
+                margin-top: 8px;
+            }
         }
-    }
-    &__hair {
-        font-style: normal;
-        font-weight: 500;
-        font-size: 18px;
-        line-height: 22px;
-    }
-    &__cost {
-        font-style: normal;
-        font-style: normal;
-        font-weight: 400;
-        font-size: 14px;
-        line-height: 17px;
-        position: absolute;
-        right: 0;
-    }
-
-    
+    }  
 }
 .masters {
     margin-top: 100px;
@@ -236,12 +291,78 @@ a {
     &__title {
         font-size: 48px;
     }
-    & img {
+    &__image {
         margin-right: 29px;
     }
     &__list {
         display: flex;
         flex-wrap: nowrap;
+    }
+    & .arrow-forward {
+        position: relative;
+        width: 0px;
+        height: 0px;
+        left: 1300px;
+        bottom: 500px;
+        opacity: 1;
+        &:hover {
+            opacity: 1;
+        }
+        &__angle {
+            position: absolute;
+            left: 15px;
+            top: 32px;
+            width: 24px;
+            height: 24px;
+            opacity: 0.3;
+            border: 4px solid #00BF78;
+            border-width: 0px 0px 5px 5px;
+            transform: rotate(230deg);
+        } 
+        &__line::after {
+            position: absolute;
+            top: 43px;
+            width: 40px;
+            height: 5px;
+            content: "";
+            background-color: #00BF78;
+            opacity: 0.3;
+            transform: rotate(360deg);
+            z-index: -5;
+        }
+    }
+    & .arrow-reverse {
+        position: relative;
+        width: 0px;
+        height: 0px;
+        left: 1250px;
+        bottom: 500px;
+        opacity: 1;
+        &:hover {
+            opacity: 1;
+        }
+        &__angle {
+            position: absolute;
+            left: 0px;
+            top: 34px;
+            width: 24px;
+            height: 24px;
+            opacity: 0.3;
+            border: 4px solid #00BF78;
+            border-width: 0px 0px 5px 5px;
+            transform: rotate(46deg);
+        } 
+        &__line::after {
+            position: absolute;
+            top: 43px;
+            width: 40px;
+            height: 5px;
+            content: "";
+            background-color: #00BF78;
+            opacity: 0.3;
+            transform: rotate(360deg);
+            z-index: -5;
+        }
     }
 }
 .brands {
@@ -263,9 +384,13 @@ a {
         font-size: 48px; 
     }
     &__address {
-        color: blue;
+        color: #278AFF;
+        text-decoration: underline;
     }
     &__description {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 14px;
         margin-top: 32px;
     }
     & .container {
@@ -279,29 +404,35 @@ a {
         height: 406px;
         position: absolute;
         right: 0;
-        top: 0;
-        &__wrapper {
+        top: 20px;
+        &__container {
             padding-right: 35px;
            padding-left: 35px;
            padding-top: 40px;
            padding-bottom: 40px;
-            & input {
+           & .menu__input {
                 width: 375px;
                 height: 44px;
+                margin-bottom: 20px;
+                // outline: 1px solid #666; 
             }
-            & button {
+            & .menu__subtitle {
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 20px;
+            }
+            & .menu__subbtn {
+                font-weight: 300;
+                font-size: 12px;
+                line-height: 15px;
+            }
+            & .menu__subbtn2 {
+                color: #278AFF;
+                text-decoration: underline;
+            }
+            .btn--contacts {
                 width: 375px;
                 height: 48px;
-                background: #FB9475;
-                border-radius: 24px;
-                text-align: center;
-                color: #FFFFFF;
-                font-style: normal;
-                font-weight: 500;
-                font-size: 14px;
-                line-height: 14px;
-                cursor: pointer;
-                border: none;
             }
         }
     }
@@ -310,13 +441,25 @@ a {
     & .container {
         position: relative;
     }
+    &__title {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 14.63px;
+    }
+    &__subtitle {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 14.63px;
+        color: #278AFF;
+        text-decoration: underline;
+    }
     &__navigation {
         position: absolute;
         right: 0;
         bottom: 0;
-        display: flex;
-        list-style: none;
-        cursor: pointer;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 14.63px;
     }
 }
 .social {
@@ -342,115 +485,8 @@ a {
         }
     }
 }
-.arrow-forward {
-    position: relative;
-    width: 0px;
-    height: 0px;
-    left: 1300px;
-    bottom: 500px;
-    opacity: 1;
-    &:hover {
-        opacity: 1;
-    }
-    &__angle {
-        position: absolute;
-        left: 15px;
-        top: 32px;
-        width: 24px;
-        height: 24px;
-        opacity: 0.3;
-        border: 4px solid #00BF78;
-        border-width: 0px 0px 5px 5px;
-        transform: rotate(230deg);
-    } 
-    &__line::after {
-        position: absolute;
-        top: 43px;
-        width: 40px;
-        height: 5px;
-        content: "";
-        background-color: #00BF78;
-        opacity: 0.3;
-        transform: rotate(360deg);
-        z-index: -5;
-    }
-}
-.arrow-reverse {
-    position: relative;
-    width: 0px;
-    height: 0px;
-    left: 1250px;
-    bottom: 500px;
-    opacity: 1;
-    &:hover {
-        opacity: 1;
-    }
-    &__angle {
-        position: absolute;
-        left: 0px;
-        top: 34px;
-        width: 24px;
-        height: 24px;
-        opacity: 0.3;
-        border: 4px solid #00BF78;
-        border-width: 0px 0px 5px 5px;
-        transform: rotate(46deg);
-    } 
-    &__line::after {
-        position: absolute;
-        top: 43px;
-        width: 40px;
-        height: 5px;
-        content: "";
-        background-color: #00BF78;
-        opacity: 0.3;
-        transform: rotate(360deg);
-        z-index: -5;
-    }
-}
 
-/* Large Devices, Wide Screens */ 
-@media only screen and (max-width: 1280px) { 
-} 
-/* Medium Devices, Desktops */ 
-@media only screen and (max-width: 992px) { 
-    .header__girl {
-        opacity: 0.4;
-    }
-    .header__hero {
-        text-align: center;
-    }
-} 
-/* Small Devices, Tablets */ 
-@media only screen and (max-width: 768px) {
-    .header__top {
-        flex-direction: column;
-    }
-    .header__logo {
-        margin-left: 50%;
-    }
-    .phone-info__tel {
-        font-size: 32px;
-    }
-} 
-/* Extra Small Devices, Phones */ 
-@media only screen and (max-width: 480px) { 
-    .header .container {
-        padding-bottom: 60px;
-    }
-    .header__top {
-        padding-bottom: 40px;
-    }
-    .header__navigation {
-        display: none;
-    }
-    .header__girl {
-        display: none;
-    }
-} 
-/* Custom, iPhone Retina */ 
-@media only screen and (max-width: 320px) { 
-}
+
 
 
 
