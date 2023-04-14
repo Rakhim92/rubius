@@ -1,0 +1,324 @@
+html {
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    color: #333333;
+}
+a {
+    text-decoration: none;
+    color: #333333;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+.header {
+    background: #F8F6F7;
+    overflow: hidden;
+}
+.header .container {
+    position: relative;
+    padding: 30px 0 130px 0;
+}
+.btn {
+    background: #FB9475;
+    border-radius: 24px;
+    align-items: center;
+    padding: 17px 30px;
+    width: 203px;
+    height: 48px;
+    cursor: pointer;
+    border: none;
+}
+.header__top {
+    margin-bottom: 120px;
+    display: flex;
+    width: 100%;
+    align-items: baseline;
+    justify-content: space-between; 
+}
+.navigation ul {
+    display: flex;
+    list-style: none;
+    font-weight: 500;
+    line-height: 17px;
+}
+.navigation li:not(:last-child) {
+    margin-right: 10px;
+}
+.about {
+    margin-top: 94px;
+}
+
+
+.container {
+    max-width: 1110px;
+    margin: auto;
+}
+
+a.logo {
+    font-size: 24px;
+    color: #333;
+    font-weight: bold;
+    text-decoration: none;
+}
+.phone-info {
+    text-align: right;
+}
+.header__girl {
+    position: absolute;
+    bottom: 0;
+    right: 60px;
+    z-index: 0;
+}
+.header__girl::before {
+    content: "";
+    width: 472px;
+    height: 472px;
+    border-radius: 50%;
+    background-color: #FB9475;
+    position: absolute;
+    bottom: -110px;
+    right: 0;
+}
+
+.header__girl img {
+    display: block;
+    position: relative;
+}
+header__hero,
+.header__top {
+    z-index: 1;
+    position: relative;
+}
+.about__hero {
+    max-width: 569.54px;
+}
+.about__creame {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+.about .container {
+    position: relative;
+}
+.advantages .container {
+    display: flex;
+}
+.advantages {
+    text-align: center;
+    margin-top: 104.49px;
+}
+.service__inner {
+    display: flex;
+    flex-wrap: wrap;
+    /* align-items: flex-start; */
+}
+.service__inner div {
+    max-width: 350px;
+}
+.prices h1 {
+    font-size: 48px;
+}
+.prices {
+    margin-top: 100px;
+}
+.prices ul {
+    display: flex;
+    list-style: none;
+}
+.prices li {
+    margin-right: 10px;
+}
+.prices .list {
+    margin-bottom: 57px;
+}
+.prices .checklist li {
+    max-height: 51px;
+    width: 444.12px;
+    position: relative;
+   
+}
+.prices .checklist {
+    display: flex;
+    flex-wrap: wrap;
+}
+/* .prices .checklist {
+    flex-wrap: wrap;
+    max-width: 1015px;
+} */
+.masters .list {
+    display: flex;
+    /* flex-wrap: wrap; */
+}
+.works .list {
+    display: flex;
+    flex-wrap: nowrap;
+}
+.flashback {
+    background: #FFFFFF;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    
+}
+.contacts {
+    height: 445px;
+}
+.contacts .container {
+    position: relative;
+}
+
+footer .container {
+    position: relative;
+}
+.footer__navigation {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    list-style: none;
+    cursor: pointer;
+}
+
+.service {
+    margin-top: 102px;
+}
+.service button {
+    background: #FB9475;
+    border-radius: 17px;
+    align-items: center;
+    padding: 10px 20px;
+    width: 112px;
+    height: 34px;
+    cursor: pointer;
+    border: none;
+}
+.service h1 {
+    font-size: 48px;
+}
+.service h3 {
+    margin-top: 20px;
+    margin-bottom: 0px;
+}
+.service p {
+    margin-top: 8px;
+} 
+.about h1 {
+    font-size: 48px;
+}
+.header h1 {
+    font-size: 48px;
+    max-width: 540px;
+}
+.prices .list li:not(:last-child) {
+    margin-right: 28px;
+}
+.prices ul {
+    padding-left: 0;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+}
+.prices .checklist li {
+    margin-bottom: 36px;
+    margin-right: 50px;
+}
+.hair {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+}
+.cost {
+    font-style: normal;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    position: absolute;
+    right: 0;
+}
+.masters {
+    margin-top: 100px;
+}
+.masters h1 {
+    font-size: 48px; 
+}
+.masters .list div {
+    margin-right: 30px;
+}
+.name {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+}
+.works {
+    margin-top: 100px;
+}
+.works h1 {
+    font-size: 48px;
+}
+.works img {
+    margin-right: 29px;
+}
+.brands {
+    margin-top: 150px;
+    opacity: 0.5;
+}
+.brands h3 {
+    text-align: center;
+}
+.logos {
+    display: flex;
+    justify-content: space-around;
+}
+.contacts {
+ margin-top: 100px;
+}
+.flashback {
+    width: 445px;
+    height: 406px;
+}
+.wrapper {
+    padding-right: 35px;
+   padding-left: 35px;
+   padding-top: 40px;
+   padding-bottom: 40px;
+}
+.wrapper input {
+    width: 375px;
+    height: 44px;
+}
+.wrapper button {
+    width: 375px;
+    height: 48px;
+    background: #FB9475;
+    border-radius: 24px;
+    text-align: center;
+    color: #FFFFFF;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 14px;
+    cursor: pointer;
+    border: none;
+}
+.social {
+    list-style: none;
+    display: flex;
+}
+.social__item:not(:last-child) {
+    margin-right: 20px;  
+}
+.social--vertical {
+    display: block; 
+    position: absolute;
+    right: 0;
+    bottom: 200px;
+}
+.social--vertical .social__item:not(:last-child) {
+    margin-bottom: 20px;
+}
