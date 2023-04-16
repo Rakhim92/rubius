@@ -34,6 +34,13 @@ function buildHtml() {
         .pipe(browserSync.stream());
 }
 
+// Таск работы с js файлами
+function buildJs() {
+    return src('src/**/*.js')
+        .pipe(dest('dist'))
+        .pipe(browserSync.stream());
+}
+
 // Таск копирования статичных файлов
 function copy() {
     return src(['src/images/**/*.*'])
@@ -48,6 +55,7 @@ function cleanDist() {
 // Таск отслеживания изменения файлов
 function serve() {
     watch('src/scss/**/*.scss', buildSass);
+    watch('src/**/*.js', buildJs);
     watch('src/**/*.html', buildHtml);
 }
 
@@ -59,9 +67,10 @@ function createDevServer() {
     })
 }
 
+exports.js = buildJs;
 exports.sass = buildSass;
 exports.html = buildHtml;
 exports.copy = copy;
 exports.cleanDist = cleanDist;
-exports.build = series(cleanDist, buildSass, buildHtml, copy);
-exports.default = series(buildSass, buildHtml, parallel(createDevServer, serve));
+exports.build = series(cleanDist, buildJs, buildSass, buildHtml, copy);
+exports.default = series(buildJs, buildSass, buildHtml, parallel(createDevServer, serve));

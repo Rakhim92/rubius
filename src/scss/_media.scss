@@ -87,9 +87,34 @@
 // } 
 /* Extra Small Devices, Phones */ 
 @media only screen and (max-width: 480px) { 
-    // .hero__title {
-    //     font-size: 24px;
-    // }
+    .header .hamb {
+        display: flex;
+        align-items: center;
+        &__field {
+        //   padding: 10px 20px;
+          cursor: pointer;
+        }
+        &__field.active .bar:nth-child(2) {
+          opacity: 0;
+        }
+      
+        &__field.active .bar:nth-child(1) {
+          transform: translateY(8px) rotate(45deg);
+        }
+      
+        &__field.active .bar:nth-child(3) {
+          transform: translateY(-8px) rotate(-45deg);
+        }
+        & .bar {
+          display: block;
+          width: 30px;
+          height: 3px;
+          margin: 6px auto;
+          background-color: black;
+          transition: 0.2s;
+        }
+    }
+
     .social  {
         // background-color: green;
         display: none;
