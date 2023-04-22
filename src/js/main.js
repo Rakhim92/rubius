@@ -1,4 +1,9 @@
-
+import Girl from '../images/girl.png';
+import Vector1 from '../images/Vector1.png';
+import Vector2 from '../images/Vector2.png';
+import Vector3 from '../images/Vector3.png';
+import Creame from '../images/creame.png';
+import Creame1 from '../images/Group 25.png';
 Fancybox.bind('[data-fancybox="gallery"]', {
   // Your custom options
 });
@@ -42,6 +47,7 @@ function hambHandler(e) {
 //   hamb.classList.remove("active");
 //   body.classList.remove("noscroll");
 // }
+
 
 const pricesInner = document.querySelector('.prices__inner');
 const tabs = document.querySelectorAll('.prices__type');

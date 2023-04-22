@@ -19,16 +19,13 @@ a {
     max-width: 1110px;
     margin: auto;
 }
-// .navigation__item {
-//     white-space: nowrap;
-// }
 .btn {
-    background: #FB9475;
-    border-radius: 24px;
-    align-items: center;
     padding: 17px 30px;
     width: 203px;
     height: 48px;
+    align-items: center;
+    background: #FB9475;
+    border-radius: 24px;
     cursor: pointer;
     color: #FFFFFF;
     border: none;
@@ -39,13 +36,16 @@ a {
 .navigation__list {
     display: flex;
     flex-wrap: nowrap;
-    list-style: none;
     gap: 28px;
+    list-style: none;
     font-weight: 500;
     font-size: 14px;
     line-height: 17.07px;
     & .navigation__item {
         white-space: nowrap;
+    }
+    & .navigation__link:hover {
+        color: #00BF78
     }
 }
 .header {
@@ -123,36 +123,44 @@ a {
 }
 .about {
     margin-top: 94px;
+
     & .container {
         position: relative;
     }
+
     &__hero {
         max-width: 569.54px;
+
         & .about__title {
             font-weight: 700;
             font-size: 48px;
             line-height: 58.51px;
         }
+
         & .about__subtitle {
             font-weight: 400;
             font-size: 20px;
             line-height: 32px;
         }
+
         & .about__description {
             font-weight: 400;
             font-size: 16px;
             line-height: 26px;
         }
+
     }
+
     &__creame {
         position: absolute;
         bottom: 0px;
         right: 0;
     }
+
     &__label {
         position: absolute;
         bottom: 25%;
-        right: 10%;
+        right: 25%;
     }
 }
 .advantages {
@@ -160,16 +168,22 @@ a {
     margin-top: 104.49px;
     & .container {
         display: flex;
+        flex-wrap: wrap;
     }
+
+    &__frame {
+        width: 33%;
+    }
+
     &__title {
         font-weight: 600;
         font-size: 18px;
         line-height: 21.94px;
     }
+
     &__subtitle {
         text-align: center;
         flex-wrap: wrap;
-        padding-left: 50px;
         font-weight: 400;
         font-size: 14px;
         line-height: 22px;
@@ -184,26 +198,32 @@ a {
         list-style: none;
         padding: 0;
     }
+
     &__title {
         font-weight: 700;
         font-size: 48px;
         line-height: 59px;
     }
+
     &__card {
         max-height: 300px;
         max-width: 350px;
         margin-bottom: 88px;
+
         & .service__image {
             margin-bottom: 20px;
         }
+
         & .service__name {
             margin: 0;
             margin-bottom: 8px;
         }
+
         & .service__description {
             margin: 0;
             margin-bottom: 16px;
         }
+
         & .service--btn {
             width: 112px;
             height: 34px;
@@ -211,6 +231,7 @@ a {
             background: #FB9475;
             border-radius: 17px;
         }
+
     }
 }
 .prices {
@@ -220,20 +241,23 @@ a {
         font-size: 48px;
         line-height: 59px;
     }
+
     &__list {
         display: flex;
-        list-style: none;
+        margin-bottom: 57px;
         padding-left: 0;
+        list-style: none;
         font-weight: 500;
         font-size: 14px;
         line-height: 17px;
-        margin-bottom: 57px;
+
         & .prices__type {
             font-weight: 500;
             font-size: 14px;
             line-height: 17px;
             margin-right: 10px;
             cursor: pointer;
+
             &:hover {
                 opacity: 0.7;
                 text-decoration: underline;
@@ -250,6 +274,7 @@ a {
         flex-wrap: wrap;
         list-style: none;
         padding-left: 0;
+
         & .prices__item {
             margin-bottom: 36px;
             margin-right: 50px;
@@ -259,6 +284,7 @@ a {
             &:not(:last-child) {
                 margin-right: 28px;
             }
+
             & .prices__hair {
                 font-weight: 500;
                 font-size: 18px;
@@ -269,6 +295,7 @@ a {
                     text-decoration: underline;
                 }
             }
+
             & .prices__cost {
                 font-weight: 600;
                 font-size: 20px;
@@ -277,12 +304,14 @@ a {
                 position: absolute;
                 right: 0;
             }
+
             & .prices__description {
                 font-weight: 400;
                 font-size: 14px;
                 line-height: 17px;
                 margin-top: 8px;
             }
+
         }
     }  
   
@@ -293,11 +322,9 @@ a {
     &__title {
         font-size: 48px; 
     }
-    & .masters__list div {
-        margin-right: 30px;
-    }
-    & .masters__list {
+    &__list {
         display: flex; 
+        gap: 0 30px;
     }
     &__name {
         font-weight: 600;
@@ -307,16 +334,20 @@ a {
 }
 .works {
     margin-top: 100px;
+
     &__title {
         font-size: 48px;
     }
+
     &__image {
         margin-right: 29px;
     }
+
     &__list {
         display: flex;
         flex-wrap: nowrap;
     }
+
     & .arrow-forward {
         position: relative;
         width: 0px;
@@ -387,13 +418,16 @@ a {
 .brands {
     margin-top: 150px;
     opacity: 0.5;
+
     & h3 {
         text-align: center;
     }
+
     &__images {
         display: flex;
         justify-content: space-around;
     }
+
 }
 .contacts {
     height: 445px;
@@ -429,26 +463,31 @@ a {
            padding-left: 35px;
            padding-top: 40px;
            padding-bottom: 40px;
+
            & .menu__input {
                 width: 375px;
                 height: 44px;
                 margin-bottom: 20px;
                 // outline: 1px solid #666; 
             }
+
             & .menu__subtitle {
                 font-weight: 400;
                 font-size: 14px;
                 line-height: 20px;
             }
+
             & .menu__subbtn {
                 font-weight: 300;
                 font-size: 12px;
                 line-height: 15px;
             }
+
             & .menu__subbtn2 {
                 color: #278AFF;
                 text-decoration: underline;
             }
+
             .btn--contacts {
                 width: 375px;
                 height: 48px;
@@ -460,11 +499,13 @@ a {
     & .container {
         position: relative;
     }
+
     &__title {
         font-weight: 400;
         font-size: 12px;
         line-height: 14.63px;
     }
+
     &__subtitle {
         font-weight: 400;
         font-size: 12px;
@@ -472,6 +513,7 @@ a {
         color: #278AFF;
         text-decoration: underline;
     }
+
     &__navigation {
         position: absolute;
         right: 0;
@@ -488,12 +530,15 @@ a {
         cursor: pointer;
         opacity: 0.5;
     }
+
     &__item:hover {
         opacity: 1;
     }
+
     &__item:not(:last-child) {
         margin-right: 20px;  
     }
+
     &--vertical {
         display: block; 
         position: absolute;
@@ -503,6 +548,7 @@ a {
             margin-bottom: 20px;
         }
     }
+    
 }
 
 .popup__menu  {

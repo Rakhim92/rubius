@@ -6,6 +6,8 @@ const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
 const sourcemaps = require('gulp-sourcemaps');
+const webpackStream = require('webpack-stream');
+const rename = require('gulp-rename');
 
 // Таск компиляции SASS в CSS
 function buildSass() {
@@ -36,9 +38,12 @@ function buildHtml() {
 
 // Таск работы с js файлами
 function buildJs() {
-    return src('src/**/*.js')
-        .pipe(dest('dist'))
-        .pipe(browserSync.stream());
+    return src('src/js/main.js')
+      .pipe(webpackStream(require('./webpack.config')))
+      .pipe(rename('main.min.js'))
+      .pipe(dest('src/js'))
+      .pipe(dest('dist/js'))
+      .pipe(browserSync.stream());
 }
 
 // Таск копирования статичных файлов
@@ -72,5 +77,5 @@ exports.sass = buildSass;
 exports.html = buildHtml;
 exports.copy = copy;
 exports.cleanDist = cleanDist;
-exports.build = series(cleanDist, buildJs, buildSass, buildHtml, copy);
-exports.default = series(buildJs, buildSass, buildHtml, parallel(createDevServer, serve));
+exports.default = series([buildSass, buildJs], parallel(createDevServer, serve));
+exports.build = series(cleanDist, parallel(buildSass, buildHtml, copy, buildJs));
