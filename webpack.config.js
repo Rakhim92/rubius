@@ -9,14 +9,19 @@ mode: process.env.NODE_ENV,
 // devtool: isProduction ? 'none' : 'inline-source-map',
 entry: path.resolve(__dirname, 'src/js/main.js'),
   output: {
-    filename: '[name].js[hash]',
+    // filename: '[name].js[hash]',
+    filename: 'my-first-webpack.bundle.js',
     path: path.resolve(__dirname, 'dist'),
   },
     module:{
       rules:[
         {
             test: /\.scss$/,
-            use: ['style-loader', 'css-loader', 'sass-loader']
+            use:   [
+              MiniCssExtractPlugin.loader, 
+              'css-loader', 
+              'sass-loader'
+            ]
         },
         {
             test: /\.(svg|png|jpg|jpeg|gif)$/, 

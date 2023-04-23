@@ -1,9 +1,12 @@
-import Girl from '../images/girl.png';
-import Vector1 from '../images/Vector1.png';
-import Vector2 from '../images/Vector2.png';
-import Vector3 from '../images/Vector3.png';
-import Creame from '../images/creame.png';
-import Creame1 from '../images/Group 25.png';
+// import Girl from '../images/girl.png';
+// import Vector1 from '../images/Vector1.png';
+// import Vector2 from '../images/Vector2.png';
+// import Vector3 from '../images/Vector3.png';
+// import Creame from '../images/creame.png';
+// import Creame1 from '../images/Group 25.png';
+
+// import '../scss/style.scss';
+console.log("fgfgf")
 Fancybox.bind('[data-fancybox="gallery"]', {
   // Your custom options
 });
@@ -89,4 +92,61 @@ contactsForm.addEventListener('submit', function(event) {
   })
   this.reset();
 })
+
+
+// устанавливаем триггер для модального окна (название можно изменить)
+const modalTrigger = document.getElementsByClassName("btn")
+console.log(modalTrigger)
+
+// // получаем ширину отображенного содержимого и толщину ползунка прокрутки
+// const windowInnerWidth = document.documentElement.clientWidth;
+// const scrollbarWidth = parseInt(window.innerWidth) - parseInt(windowInnerWidth);
+
+// // привязываем необходимые элементы
+// const bodyElementHTML = document.getElementsByTagName("body")[0];
+// const modalBackground = document.getElementsByClassName("modalBackground")[0];
+// const modalClose = document.getElementsByClassName("modalClose")[0];
+// const modalActive = document.getElementsByClassName("modalActive")[0];
+
+// // функция для корректировки положения body при появлении ползунка прокрутки
+// function bodyMargin() {
+//     bodyElementHTML.style.marginRight = "-" + scrollbarWidth + "px";
+// }
+
+// // при длинной странице - корректируем сразу
+// bodyMargin();
+
+// // событие нажатия на триггер открытия модального окна
+// modalTrigger.addEventListener("click", function () {
+//     // делаем модальное окно видимым
+//     modalBackground.style.display = "block";
+
+//     // если размер экрана больше 1366 пикселей (т.е. на мониторе может появиться ползунок)
+//     if (windowInnerWidth >= 1366) {
+//         bodyMargin();
+//     }
+
+//     // позиционируем наше окно по середине, где 175 - половина ширины модального окна
+//     modalActive.style.left = "calc(50% - " + (175 - scrollbarWidth / 2) + "px)";
+// });
+
+// // нажатие на крестик закрытия модального окна
+// modalClose.addEventListener("click", function () {
+//     modalBackground.style.display = "none";
+//     if (windowInnerWidth >= 1366) {
+//         bodyMargin();
+//     }
+// });
+
+// // закрытие модального окна на зону вне окна, т.е. на фон
+// modalBackground.addEventListener("click", function (event) {
+//     if (event.target === modalBackground) {
+//         modalBackground.style.display = "none";
+//         if (windowInnerWidth >= 1366) {
+//             bodyMargin();
+//         }
+//     }
+// });
+
+
 

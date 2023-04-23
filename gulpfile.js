@@ -60,8 +60,8 @@ function cleanDist() {
 // Таск отслеживания изменения файлов
 function serve() {
     watch('src/scss/**/*.scss', buildSass);
-    watch('src/**/*.js', buildJs);
     watch('src/**/*.html', buildHtml);
+    watch(['src/**/*.js', '!src/js/**/*.min.js'], buildJs);
 }
 
 //Таск дев-сервера
@@ -77,5 +77,5 @@ exports.sass = buildSass;
 exports.html = buildHtml;
 exports.copy = copy;
 exports.cleanDist = cleanDist;
-exports.default = series([buildSass, buildJs], parallel(createDevServer, serve));
+exports.default = series(buildSass, buildJs, parallel(createDevServer, serve));
 exports.build = series(cleanDist, parallel(buildSass, buildHtml, copy, buildJs));
