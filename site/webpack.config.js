@@ -45,6 +45,11 @@ entry: path.resolve(__dirname, 'src/js/main.js'),
     },
 
     plugins: [
+        // new webpack.ProvidePlugin({
+        // $: "jquery/dist/jquery.min.js",
+        // jQuery: "jquery/dist/jquery.min.js",
+        // "window.jQuery": "jquery/dist/jquery.min.js"
+        // }),
         new HtmlWebpackPlugin({
         template: './src/index.html'
         }),

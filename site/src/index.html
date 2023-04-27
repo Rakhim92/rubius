@@ -23,16 +23,16 @@
                     <img src="./images/x-square-svgrepo-com.svg" />
                 </div>
                 <div class="modalWindow">
-                    <form action="1">
-                        <input class="modalWindow__name" type="text" placeholder="Ваше имя">
-                        <input class="modalWindow__number" type="text" placeholder="+79234163016">
-                        <select class="modalWindow__masters" name="master" id="kok">
+                    <form class="modalWindow__form" id="modalWindow" action="1">
+                        <input class="modalWindow__name" type="text" placeholder="Ваше имя" name="name" required>
+                        <input class="modalWindow__number" type="text" placeholder="+79234163016" name="number" required>
+                        <select class="modalWindow__masters" id="kok" name="masters">
                           <option value="1">Даша</option>
                           <option value="2">Маша</option>
                           <option value="3">Саша</option>
                           <option value="4">Катя</option>
                         </select>
-                        <select class="modalWindow__service" name="service" id="lol">
+                        <select class="modalWindow__service" id="lol" name="service">
                           <option value="1">Стрижка</option>
                           <option value="2">Макияж</option>
                           <option value="3">Педикюр</option>
@@ -40,7 +40,7 @@
                           <option value="5">Массаж</option>
                           <option value="6">Консультация</option>
                         </select>
-                        <input class="modalWindow__date" type="date">
+                        <input class="modalWindow__date" type="date" name="date" required>
                         <button class="btn">Записаться</button>
                     </form>
                 </div>
@@ -354,9 +354,6 @@
                             <div class="prices__description">Простой педикюр</div>
                         </li>
     
-                   
-                        
-
                     </ul>
 
                     <ul class="prices__checklist ">
@@ -648,7 +645,7 @@
 
             </div>
         </footer>
-
+<script src="https://unpkg.com/imask"></script> 
 <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>    
 <script src="./js/main.js"></script>
 </body>

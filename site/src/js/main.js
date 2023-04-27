@@ -1,7 +1,46 @@
-// import '../scss/style.scss';
+const form = document.getElementById('modalWindow');
+const statusMessage = document.createElement('div');
+
+form.addEventListener('submit', (event) => {
+  event.preventDefault();
+
+  form.appendChild(statusMessage);
+  statusMessage.textContent = "Загрузка...";
+  const {name, number, masters, service, date} = event.target.elements;
+
+  let user = {
+    name: name.value,
+    number: number.value,
+    masters: masters.value,
+    service: service.value,
+    date: date.value
+  };
+  console.log(user)
+  fetch('http://localhost:3001/api/orders', {
+    method: 'POST',
+    body: JSON.stringify(user),
+    headers: {
+        'Content-type': 'application/json; charset=UTF-8',
+    },
+})
+try {
+  statusMessage.textContent = "Спасибо! Мы скоро с вами свяжемся";
+} catch(e) {
+  statusMessage.textContent =  "Что-то пошло не так...";
+}
+})
+
 Fancybox.bind('[data-fancybox="gallery"]', {
   // Your custom options
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  const inputElement = document.querySelector('.modalWindow__number') // ищем наш единственный input
+  const maskOptions = { // создаем объект параметров
+    mask: '+{7}(000)000-00-00' // задаем единственный параметр mask
+  }
+  IMask(inputElement, maskOptions) // запускаем плагин с переданными параметрами
+})
 
 // Гамбургер!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 const hamb = document.querySelector("#hamb");

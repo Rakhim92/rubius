@@ -47,8 +47,26 @@ body {
 }
 
 /* делаем позиционирование внутренних элементов относительно модального окна */
+
 .modalWindow {
     position: relative;
+
+    & input:invalid {
+        border: 2px dashed red;
+      }
+      
+    & input:valid {
+        border: 2px solid green;
+    }
+   
+    &__form {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+    & input {
+        height: 40px;
+    }
 
     &__masters {
         display: block;
@@ -58,3 +76,6 @@ body {
         display: block;
     }
 }
+// .modalWindow__name:invalid {
+//     border: 3px solid red;
+// }
