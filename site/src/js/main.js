@@ -1,48 +1,80 @@
-const form = document.getElementById('modalWindow');
-const statusMessage = document.createElement('div');
-
-form.addEventListener('submit', (event) => {
-  event.preventDefault();
-
-  form.appendChild(statusMessage);
-  statusMessage.textContent = "Загрузка...";
-  const {name, number, masters, service, date} = event.target.elements;
-
-  let user = {
-    name: name.value,
-    number: number.value,
-    masters: masters.value,
-    service: service.value,
-    date: date.value
-  };
-  console.log(user)
-  fetch('http://localhost:3001/api/orders', {
-    method: 'POST',
-    body: JSON.stringify(user),
-    headers: {
-        'Content-type': 'application/json; charset=UTF-8',
-    },
-})
-try {
-  statusMessage.textContent = "Спасибо! Мы скоро с вами свяжемся";
-} catch(e) {
-  statusMessage.textContent =  "Что-то пошло не так...";
-}
-})
-
 Fancybox.bind('[data-fancybox="gallery"]', {
   // Your custom options
 });
 
-document.addEventListener('DOMContentLoaded', () => {
-  const inputElement = document.querySelector('.modalWindow__number') // ищем наш единственный input
-  const maskOptions = { // создаем объект параметров
-    mask: '+{7}(000)000-00-00' // задаем единственный параметр mask
-  }
-  IMask(inputElement, maskOptions) // запускаем плагин с переданными параметрами
-})
+const form = document.getElementById('modalWindow');
+const statusMessage = document.createElement('div');
 
-// Гамбургер!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+fetch('http://localhost:3002/api/staff')
+  .then((res) => res.json())
+  .then((data) => getMasters(data))
+fetch('http://localhost:3002/api/services')
+  .then((res) => res.json())
+  .then((data) => getService(data))
+
+function getMasters (data) {
+  const modalWindowMasters = document.querySelector(".modalWindow__masters");
+  for (let i = 0; i < data.length; i++) {
+    modalWindowMasters.insertAdjacentHTML('beforeend', `
+      <option value="${[i]}">${data[i].firstName}</option>
+    `)
+  }
+}
+function getService (data) {
+  const modalWindowService = document.querySelector(".modalWindow__service");
+  for (let i = 0; i < data.length; i++) {
+    modalWindowService.insertAdjacentHTML('beforeend', `
+      <option value="${[i]}">${data[i].name}</option>
+    `)
+  }
+}
+
+
+function getSendApplication() {
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+  
+    form.appendChild(statusMessage);
+    statusMessage.textContent = "Загрузка...";
+    const {name, number, masters, service, date} = event.target.elements;
+  
+    let user = {
+      name: name.value,
+      number: number.value,
+      masters: masters.value,
+      service: service.value,
+      date: date.value
+    };
+    console.log(user)
+    fetch('http://localhost:3001/api/orders', {
+      method: 'POST',
+      body: JSON.stringify(user),
+      headers: {
+          'Content-type': 'application/json; charset=UTF-8',
+      },
+  })
+  try {
+    statusMessage.textContent = "Спасибо! Мы скоро с вами свяжемся";
+  } catch(e) {
+    statusMessage.textContent =  "Что-то пошло не так...";
+  }
+  })
+}
+getSendApplication()
+
+function getMaskInput() {
+  document.addEventListener('DOMContentLoaded', () => {
+    const inputElement = document.querySelector('.modalWindow__number') // ищем наш единственный input
+    const maskOptions = { // создаем объект параметров
+      mask: '+{7}(000)000-00-00' // задаем единственный параметр mask
+    }
+    IMask(inputElement, maskOptions) // запускаем плагин с переданными параметрами
+  })
+}
+getMaskInput()
+
+  // Гамбургер!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+function getHamburgerMenu() {
 const hamb = document.querySelector("#hamb");
 const popup = document.querySelector("#popup");
 const body = document.body;
@@ -59,32 +91,38 @@ function hambHandler(e) {
   body.classList.toggle("noscroll");
   // renderPopup();
 }
+}
+getHamburgerMenu()
 
 //Оживление табов!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-const pricesInner = document.querySelector('.prices__inner');
-const tabs = document.querySelectorAll('.prices__type');
-const tabsContent = document.querySelectorAll('.prices__checklist');
-tabsContent[0].classList.add('prices--active')
-
-pricesInner.addEventListener('click', function(event) {
-//Предварительная очистка всех табов от класса prices__selected
-  Array.from(tabs).forEach( item => {
-    item.classList.remove('prices__selected')
-  });
-//И очистка связанного с табами содержимого от класса prices__active
-  Array.from(tabsContent).forEach( item => {
-    item.classList.remove('prices--active')
+function getPricesTabs() {
+  const pricesInner = document.querySelector('.prices__inner');
+  const tabs = document.querySelectorAll('.prices__type');
+  const tabsContent = document.querySelectorAll('.prices__checklist');
+  tabsContent[0].classList.add('prices--active')
+  
+  pricesInner.addEventListener('click', function(event) {
+  //Предварительная очистка всех табов от класса prices__selected
+    Array.from(tabs).forEach( item => {
+      item.classList.remove('prices__selected')
+    });
+  //И очистка связанного с табами содержимого от класса prices__active
+    Array.from(tabsContent).forEach( item => {
+      item.classList.remove('prices--active')
+    })
+  //Добавление выбранному табу класса prices__selected
+    event.target.classList.add('prices__selected');
+  //И добавление класса prices--active. Отображение контента согласно индексу
+    let index = [...tabs].indexOf(event.target);
+    if (index === -1) {
+      index = 0;
+    }
+    tabsContent[index].classList.add('prices--active')
   })
-//Добавление выбранному табу класса prices__selected
-  event.target.classList.add('prices__selected');
-//И добавление класса prices--active. Отображение контента согласно индексу
-  let index = [...tabs].indexOf(event.target);
-  if (index === -1) {
-    index = 0;
-  }
-  tabsContent[index].classList.add('prices--active')
-})
+}
+getPricesTabs()
 
+function getFormConsole() {
 //Отправка формы в консоль!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 const contactsForm = document.getElementById('menu__form');
 contactsForm.addEventListener('submit', function(event) {
@@ -96,9 +134,12 @@ contactsForm.addEventListener('submit', function(event) {
   })
   this.reset();
 })
+}
+getFormConsole()
 
 //Из V-спринта модульное окно
 // // получаем ширину отображенного содержимого и толщину ползунка прокрутки
+function getModalMenu() {
 const windowInnerWidth = document.documentElement.clientWidth;
 const scrollbarWidth = parseInt(window.innerWidth) - parseInt(windowInnerWidth);
 
@@ -167,5 +208,7 @@ modalBackground.addEventListener("click", function (event) {
     }
 });
 
+}
+getModalMenu()
 
 
