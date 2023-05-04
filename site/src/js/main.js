@@ -29,7 +29,6 @@ function getService (data) {
   }
 }
 
-
 function getSendApplication() {
   form.addEventListener('submit', (event) => {
     event.preventDefault();

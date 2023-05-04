@@ -1,5 +1,5 @@
 import { EmployeeDto } from "../../common/dto";
-import $ from 'jquery';
+// import $ from 'jquery';
 
 interface EmployeeCardProps {
     employee: EmployeeDto,
@@ -16,7 +16,6 @@ export function EmployeeCard({ employee, onRemove }: EmployeeCardProps) {
             <div>{employee.position}</div>
             {/* <div>{employee.startWorkDate}</div> */}
             <button onClick={onRemove}>Удалить</button>
-            
         </div>
     )
 }
