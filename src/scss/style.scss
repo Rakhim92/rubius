@@ -51,6 +51,9 @@ a {
 .header {
     background-image: url(../images/header-background.png);
     overflow: hidden;
+    & .hamb {
+        display: none;
+    }
     & .container {
         position: relative;
         padding: 30px 0 130px 0;
@@ -230,10 +233,20 @@ a {
             font-size: 14px;
             line-height: 17px;
             margin-right: 10px;
+            cursor: pointer;
+            &:hover {
+                opacity: 0.7;
+                text-decoration: underline;
+            }
+        
         }
+      
     }
+ 
+
     &__checklist {
-        display: flex;
+        // display: flex;
+        display: none;
         flex-wrap: wrap;
         list-style: none;
         padding-left: 0;
@@ -250,6 +263,11 @@ a {
                 font-weight: 500;
                 font-size: 18px;
                 line-height: 22px;
+                cursor: pointer;
+                &:hover {
+                    opacity: 0.7;
+                    text-decoration: underline;
+                }
             }
             & .prices__cost {
                 font-weight: 600;
@@ -267,6 +285,7 @@ a {
             }
         }
     }  
+  
 }
 .masters {
     margin-top: 100px;
@@ -486,37 +505,19 @@ a {
     }
 }
 
-
-
-.hamb {
+.popup__menu  {
     display: none;
 }
-// .navbar {
-//     position: fixed;
-//     left: 0;
-//     top: 0;
-// }
 
-.container1 {
-  width: 100%;
-  max-width: 1000px;
-  margin: 0 auto;
-  height: 100%;
-  padding: 0 15px;
+.prices--active {
+    display: flex;
 }
-.popup {
-  display: none;
+.prices--selected {
+    font-size: 16px;
+    font-style: italic;
+    color: red;
 }
-.menu1 > li > a {
-  text-decoration: none;
-}
-
-
-
 @media (max-width: 1000px) {
-    .navbar__wrap .menu1 {
-      display: none;
-    }
 
     .popup {
       position: fixed;
@@ -529,12 +530,12 @@ a {
       display: flex;
       transition: 0.3s;
     }
-  
+
     .popup.open {
       left: 0;
     }
-  
-    .popup .menu1 {
+
+    .popup .popup__menu {
       width: 100%;
       height: 100%;
       display: flex;
@@ -544,12 +545,12 @@ a {
       padding: 50px 0;
       overflow: auto;
     }
-  
-    .popup .menu1 > li {
+
+    .popup .popup__menu  > li {
       width: 100%;
     }
-  
-    .popup .menu1 > li > a {
+
+    .popup .popup__menu  > li > a {
       width: 100%;
       display: flex;
       justify-content: center;
@@ -558,23 +559,8 @@ a {
       font-weight: bold;
       color: #3f3f3f;
     }
-  
-    .popup .menu1 > li > a:hover {
+
+    .popup .popup__menu  > li > a:hover {
       background-color: rgba(122, 82, 179, 0.1);
     }
 }  
-
-
- 
-
- 
-
-
-
-
-
-  
-      
-
-
-
